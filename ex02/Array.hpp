@@ -10,11 +10,12 @@ class Array
         Array(unsigned int n);
         Array(Array const &src);
         Array & operator = (Array const &rhs);
-        T operator[](int n);
+        T& operator[](unsigned int n);
         ~Array();
+        int size() const;
     private:
         T *_arr;
-        int _size
+        int _size;
 
     class OutOfBoundsException : public std::exception
     {
@@ -22,5 +23,5 @@ class Array
             virtual const char * what() const throw();
     };
 };
-
+#include "Array.tpp"
 #endif
